@@ -1,0 +1,22 @@
+<p *ngFor="let hero of heros">{{hero.name}} | {{hero.age}} | {{hero.editor.name}}</p>
+
+
+<br>
+<br>
+<form [formGroup]="basicForm" (ngSubmit)="onSubmit()" novalidate>
+    <div>
+        <input type="text" placeholder="Nome do Heroi" formControlName="name">
+    </div>
+    <div>
+        <select style="height: 40px;" placeholder="Editora" formControlName="idEditor">
+            <option value="1">Marvel</option>
+            <option value="2">DC</option>
+            <option value="3">Bandai</option>
+        </select>
+    </div>
+    <div>
+        <input type="number" placeholder="Idade" formControlName="age">
+    </div>
+    <button type="submit">Salvar</button>
+</form>
+<button (click)="carregar()">Carregar</button>

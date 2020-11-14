@@ -1,0 +1,13 @@
+<form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <label class="form-group has-float-label">
+      <input class="form-control" required email ngModel #email="ngModel" name="email" [(ngModel)]="emailModel" />   
+      <div *ngIf="!email.valid && loginForm.submitted" class="invalid-tooltip">Email é obrigatório!</div>
+    </label>
+    <br>
+    <label class="form-group has-float-label">
+      <input class="form-control" type="password" placeholder="" required ngModel #password="ngModel" name="password"
+        [(ngModel)]="passwordModel" />
+      <div *ngIf="!password.valid && loginForm.submitted" class="invalid-tooltip">Senha é obrigatório!</div>
+    </label>
+    <button type="submit">Logar</button>
+  </form>
